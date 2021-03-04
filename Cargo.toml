@@ -1,0 +1,32 @@
+[package]
+name = "skeletonize"
+version = "0.1.0"
+authors = ["okaneco <47607823+okaneco@users.noreply.github.com>"]
+edition = "2018"
+exclude = ["gfx", ".github"]
+description = "A crate for line thinning binary images, includes edge detection and threshold functions for preprocessing."
+homepage = "https://github.com/okaneco/skeletonize"
+repository = "https://github.com/okaneco/skeletonize"
+readme = "README.md"
+
+keywords = ["morphology", "thinning", "edge-detection", "image-processing", "computer-vision"]
+categories = ["computer-vision", "multimedia::images", "science"]
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+
+[dependencies.image]
+version = "0.23"
+default-features = false
+
+[dev-dependencies.image]
+version = "0.23"
+default-features = false
+features = ["jpeg", "png", "gif"]
+
+[dev-dependencies.structopt]
+version = "0.3"
+default-features = false
+
+[[example]]
+name = "skeletonize"
