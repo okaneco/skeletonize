@@ -46,7 +46,7 @@ impl core::fmt::Display for LumaConversionErrorKind {
 impl core::fmt::Display for SkeletonizeError {
     fn fmt(&self, f: &mut core::fmt::Formatter<'_>) -> core::fmt::Result {
         match self {
-            Self::LumaConversion(err) => write!(f, "{}", err),
+            Self::LumaConversion(err) => write!(f, "{err}"),
             Self::MaxThinningIterations => {
                 write!(f, "Maximum iteration count reached in thinning algorithm")
             }

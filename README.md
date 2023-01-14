@@ -1,6 +1,6 @@
 # skeletonize
 
-[![Build Status](https://img.shields.io/github/workflow/status/okaneco/skeletonize/Rust%20CI/master)](https://github.com/okaneco/skeletonize/actions)
+[![Build Status](https://github.com/okaneco/skeletonize/workflows/Rust%20CI/badge.svg)](https://github.com/okaneco/skeletonize/)
 [![Crates.io](https://img.shields.io/crates/v/skeletonize.svg)](https://crates.io/crates/skeletonize)
 [![Docs.rs](https://docs.rs/skeletonize/badge.svg)](https://docs.rs/skeletonize)
 
@@ -23,7 +23,7 @@ crate, add the following to your `Cargo.toml`.
 
 ```toml
 [dependencies.skeletonize]
-version = "0.1"
+version = "0.2"
 ```
 
 #### Features

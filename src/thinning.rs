@@ -11,6 +11,8 @@ use crate::{Edge, ForegroundColor, MarkingMethod};
 /// needed for thinning on successful completion.
 ///
 /// `iterations` is an optional parameter set to `u32::MAX` if `None`.
+#[allow(clippy::collapsible_else_if)]
+#[allow(clippy::nonminimal_bool)]
 pub fn thin_image_edges<F: ForegroundColor>(
     img: &mut image::DynamicImage,
     method: MarkingMethod,
@@ -32,7 +34,7 @@ pub fn thin_image_edges<F: ForegroundColor>(
                 continue;
             }
 
-            let info = get_neighbor_info::<F>(&luma_img, width, height, x, y);
+            let info = get_neighbor_info::<F>(luma_img, width, height, x, y);
             let [p2, p3, p4, p5, p6, p7, p8, p9] = info.edge_status;
 
             match method {
