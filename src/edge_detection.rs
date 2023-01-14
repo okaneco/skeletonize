@@ -34,6 +34,7 @@ pub const SOBEL_WEST: [f32; 9] = [
 
 /// Detect edges in an image using [`SOBEL_EAST`](SOBEL_EAST) and
 /// [`SOBEL_NORTH`](SOBEL_NORTH) gradient operators.
+/// The image should not have transparency.
 ///
 /// `threshold` is an optional parameter between 0.0 and 1.0 which is used to
 /// binarize the image. Pixels below that `Luma` threshold will be converted
@@ -44,7 +45,6 @@ pub fn sobel<F: ForegroundColor>(
 ) -> Result<image::DynamicImage, SkeletonizeError> {
     let mut filter_up = img.filter3x3(&SOBEL_NORTH);
     let filtered_right = img.filter3x3(&SOBEL_EAST);
-
     let mutable_error = SkeletonizeError::LumaConversion(LumaConversionErrorKind::SobelMutableLuma);
     let immutable_error = SkeletonizeError::LumaConversion(LumaConversionErrorKind::SobelLuma);
 
@@ -77,6 +77,7 @@ pub fn sobel<F: ForegroundColor>(
 /// Detect edges in an image using four Sobel gradient operators:
 /// [`SOBEL_NORTH`](SOBEL_NORTH), [`SOBEL_SOUTH`](SOBEL_SOUTH),
 /// [`SOBEL_EAST`](SOBEL_EAST), and [`SOBEL_WEST`](SOBEL_WEST).
+/// The image should not have transparency.
 ///
 /// `threshold` is an optional parameter between 0.0 and 1.0 which is used to
 /// binarize the image. Pixels below that `Luma` threshold will be converted

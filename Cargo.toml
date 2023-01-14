@@ -1,6 +1,6 @@
 [package]
 name = "skeletonize"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["okaneco <47607823+okaneco@users.noreply.github.com>"]
 edition = "2018"
 exclude = ["gfx", ".github"]
@@ -16,11 +16,11 @@ license = "MIT OR Apache-2.0"
 [dependencies]
 
 [dependencies.image]
-version = "0.23"
+version = "0.24.5"
 default-features = false
 
 [dev-dependencies.image]
-version = "0.23"
+version = "0.24.5"
 default-features = false
 features = ["jpeg", "png", "gif"]
 
@@ -30,3 +30,6 @@ default-features = false
 
 [[example]]
 name = "skeletonize"
+
+[profile.release]
+strip = true

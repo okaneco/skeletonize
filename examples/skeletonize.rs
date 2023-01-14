@@ -4,7 +4,7 @@ use structopt::StructOpt;
 
 fn main() {
     if let Err(e) = try_main() {
-        eprintln!("{}", e);
+        eprintln!("{e}");
         std::process::exit(1);
     }
 }
@@ -13,7 +13,7 @@ fn try_main() -> Result<(), Box<dyn std::error::Error>> {
     let mut opt = Opt::from_args();
 
     // Open image and initialize output filename
-    let img = image::open(&opt.input)?.grayscale();
+    let img = image::DynamicImage::ImageLuma8(image::open(&opt.input)?.to_luma8());
     let output = if let Some(output) = opt.output {
         output
     } else {
